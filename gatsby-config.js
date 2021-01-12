@@ -6,6 +6,11 @@
 
 module.exports = {
   /* Your site config here */
+  siteMetadata: {
+    title: `C-photo`,
+    description: `C’s photos`,
+    lang: `ja`
+  },
   plugins: [
     `gatsby-plugin-sass`,
     `gatsby-plugin-sharp`,
