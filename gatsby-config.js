@@ -9,7 +9,8 @@ module.exports = {
   siteMetadata: {
     title: `C-photo`,
     description: `C’s photos`,
-    lang: `ja`
+    lang: `ja`,
+    siteUrl: `localhost:8000`
   },
   plugins: [
     `gatsby-plugin-sass`,
