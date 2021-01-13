@@ -10,7 +10,8 @@ module.exports = {
     title: `C-photo`,
     description: `C’s photos`,
     lang: `ja`,
-    siteUrl: `localhost:8000`
+    siteUrl: `localhost:8000`,
+    locale: `ja_JP`
   },
   plugins: [
     `gatsby-plugin-sass`,

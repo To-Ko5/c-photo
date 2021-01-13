@@ -17,6 +17,7 @@ export default (props: metaData) => {
           lang
           title
           siteUrl
+          locale
         }
       }
     }
@@ -25,6 +26,7 @@ export default (props: metaData) => {
   const title = props.pageTitle
     ? `${props.pageTitle} | ${data.site.siteMetadata.title}`
     : data.site.siteMetadata.title
+
   const description =
     props.pageDescription || data.site.siteMetadata.description
 
@@ -37,12 +39,13 @@ export default (props: metaData) => {
       <html lang={data.site.siteMetadata.lang} />
       <title>{title}</title>
       <meta name="description" content={description} />
-      <meta property="og:url" content=" ページの URL" />
-      <meta property="og:type" content=" ページの種類" />
-      <meta property="og:title" content=" ページの タイトル" />
-      <meta property="og:description" content=" ページのディスクリプション" />
-      <meta property="og:site_name" content={title} />
-      <meta property="og:image" content=" サムネイル画像の URL" />
+      <meta property="og:url" content={url} />
+      <meta property="og:title" content={title} />
+      <meta property="og:site_name" content={data.site.siteMetadata.title} />
+      <meta property="og:description" content={description} />
+      <meta property="og:type" content="website" />
+      <meta property="og:locale" content={data.site.siteMetadata.locale} />
+
       <link rel="canonical" href={url} />
     </Helmet>
   )
