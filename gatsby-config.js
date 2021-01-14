@@ -25,6 +25,20 @@ module.exports = {
         name: `images`,
         path: `${__dirname}/src/images/`
       }
-    }
+    },
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `C-photo`,
+        short_name: `C-photo`,
+        start_url: `/`,
+        lang: `ja`,
+        icon: `static/icon.png`,
+        background_color: `#212121`,
+        theme_color: `#fafafa`,
+        display: `standalone`
+      }
+    },
+    `gatsby-plugin-offline`
   ]
 }
