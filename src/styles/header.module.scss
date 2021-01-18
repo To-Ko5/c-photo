@@ -1,0 +1,49 @@
+.header {
+  color: #fafafa;
+  padding: 24px;
+  position: fixed;
+  z-index: 555;
+  width: 100%;
+  &__flex {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+.logo {
+  font-size: 50px;
+  &__link {
+    display: block;
+  }
+}
+
+.nav_button {
+  height: 50px;
+  width: 50px;
+  position: relative;
+  z-index: 888;
+  &__link {
+    cursor: pointer;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  &:before,
+  &:after {
+    content: '';
+    background-color: #fafafa;
+    height: 1px;
+    width: 100%;
+    position: absolute;
+    top: 0;
+  }
+  &:after {
+    top: auto;
+    bottom: 0;
+    right: 0;
+    width: 50%;
+  }
+}
