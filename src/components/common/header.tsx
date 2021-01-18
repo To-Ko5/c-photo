@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { Link } from 'gatsby'
 
 import NavButton from './nav-button'
+import Navigation from './navigation'
 
 import Header from '../../styles/header.module.scss'
 
@@ -10,7 +11,6 @@ export default () => {
 
   const clickNavigation = () => {
     toggleNavigation(!isNavigation)
-    console.log(isNavigation)
   }
 
   return (
@@ -21,8 +21,15 @@ export default () => {
             C-photo
           </Link>
         </p>
-        <NavButton clickNavigation={clickNavigation} />
+        <NavButton
+          isNavigation={isNavigation}
+          clickNavigation={clickNavigation}
+        />
       </div>
+      <Navigation
+        isNavigation={isNavigation}
+        clickNavigation={clickNavigation}
+      />
     </header>
   )
 }
