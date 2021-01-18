@@ -1,6 +1,6 @@
 import React from 'react'
 
-import Footer from '../styles/footer.module.scss'
+import Footer from '../../styles/footer.module.scss'
 
 export default () => {
   return (
