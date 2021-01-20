@@ -4,6 +4,9 @@
  * See: https://www.gatsbyjs.com/docs/gatsby-config/
  */
 
+const env = process.env.NODE_ENV || 'development'
+require('dotenv').config({ path: `./.env.${env}` })
+
 module.exports = {
   /* Your site config here */
   siteMetadata: {
@@ -39,6 +42,13 @@ module.exports = {
         display: `standalone`
       }
     },
-    `gatsby-plugin-offline`
+    `gatsby-plugin-offline`,
+    {
+      resolve: `gatsby-source-contentful`,
+      options: {
+        spaceId: process.env.GATSBY_CONTENTFUL_SPACE_ID,
+        accessToken: process.env.GATSBY_CONTENTFUL_API_KEY
+      }
+    }
   ]
 }
