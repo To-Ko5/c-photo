@@ -17,7 +17,7 @@ export default () => {
     <header className={Header.header}>
       <div className={Header.header__flex}>
         <p className={Header.logo}>
-          <Link to={'/about'} className={Header.logo__link}>
+          <Link to={'/'} className={Header.logo__link}>
             C-photo
           </Link>
         </p>
