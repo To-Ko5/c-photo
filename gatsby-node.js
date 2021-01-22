@@ -6,16 +6,6 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   // Query for markdown nodes to use in creating pages.
   const photoPostResult = await graphql(`
     query {
-      allContentfulPhotoPost(sort: { fields: contentful_id, order: DESC }) {
-        edges {
-          node {
-            id
-            category {
-              categorySlug
-            }
-          }
-        }
-      }
       allContentfulPhotoCategory {
         edges {
           node {
@@ -35,7 +25,6 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
 
   const productTemplate = path.resolve(`src/template/category-template.tsx`)
   photoPostResult.data.allContentfulPhotoCategory.edges.forEach(({ node }) => {
-    console.log(node.id)
     createPage({
       path: `/category/${node.categorySlug}/`,
       component: productTemplate,
