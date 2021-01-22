@@ -1,0 +1,15 @@
+.about {
+  padding-top: 100px;
+}
+
+.profile {
+  max-width: 500px;
+  margin: 0 auto;
+  &__inner {
+    display: grid;
+    gap: 32px;
+  }
+  &__description {
+    line-height: 1.5;
+  }
+}

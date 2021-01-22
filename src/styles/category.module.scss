@@ -1,0 +1,35 @@
+.category {
+  &__list {
+    padding-top: 200px;
+    display: grid;
+    grid-template-columns: (500px 500px 500px);
+    gap: 24px;
+  }
+}
+
+.keyvisual {
+  min-height: 100vh;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  &__title {
+    font-size: unquote('min(500px, 20vw)');
+    line-height: 0.5;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+  }
+  &__img {
+    height: 100vh;
+  }
+}
+
+@supports (-webkit-touch-callout: none) {
+  .keyvisual {
+    height: -webkit-fill-available;
+  }
+}
