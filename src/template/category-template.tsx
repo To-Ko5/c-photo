@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { graphql } from 'gatsby'
 import Img from 'gatsby-image'
 // components
@@ -9,6 +9,12 @@ import CategoryEyecatch from '../components/category/category-eyecatch'
 import Category from '../styles/category.module.scss'
 
 export default ({ data }) => {
+  const [num, changeModalNumber] = useState(null)
+  const toggleModal = (num: number) => {
+    changeModalNumber(num)
+    console.log(num)
+  }
+
   return (
     <Layouts>
       <div className={Category.category}>
@@ -19,10 +25,25 @@ export default ({ data }) => {
           <div className={Category.category__list}>
             {data.photo.edges.map(({ node }, index) => (
               <div>
-                <p>{index}</p>
-                <CategoryEyecatch title={node.title} img={node.img.fluid} />
-                <p> {node.description.description}</p>
-                {/* <Img fluid={node.img.fluid} /> */}
+                <CategoryEyecatch
+                  title={node.title}
+                  img={node.img.fluid}
+                  index={index}
+                  toggleModal={toggleModal}
+                />
+
+                {num === index && (
+                  <div
+                    className={Category.modal}
+                    onClick={() => toggleModal(null)}
+                  >
+                    <div>
+                      <Img fluid={node.img.fluid} />
+                      <p>{node.title}</p>
+                      <p>{node.description.description}</p>
+                    </div>
+                  </div>
+                )}
               </div>
             ))}
           </div>
