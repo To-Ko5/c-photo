@@ -55,14 +55,8 @@ export const query = graphql`
         node {
           category
           img {
-            fluid(maxWidth: 1980) {
-              base64
-              aspectRatio
-              sizes
-              src
-              srcSet
-              srcSetWebp
-              srcWebp
+            fluid(maxWidth: 1920) {
+              ...GatsbyContentfulFluid_withWebp
             }
           }
         }

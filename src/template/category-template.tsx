@@ -63,14 +63,8 @@ export const query = graphql`
           id
           category
           img {
-            fluid {
-              aspectRatio
-              base64
-              sizes
-              src
-              srcSet
-              srcSetWebp
-              srcWebp
+            fluid(maxWidth: 1920) {
+              ...GatsbyContentfulFluid_withWebp
             }
           }
         }
@@ -91,14 +85,8 @@ export const query = graphql`
             category
           }
           img {
-            fluid(maxWidth: 1980) {
-              base64
-              aspectRatio
-              sizes
-              src
-              srcSet
-              srcSetWebp
-              srcWebp
+            fluid(maxWidth: 1920) {
+              ...GatsbyContentfulFluid_withWebp
             }
           }
         }
