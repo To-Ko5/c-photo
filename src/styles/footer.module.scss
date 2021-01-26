@@ -1,6 +1,8 @@
 .footer {
   background-color: #212121;
+  position: absolute;
   padding: 8px;
+  width: 100%;
   &__text {
     color: #fafafa;
     text-align: center;
