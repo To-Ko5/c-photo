@@ -12,7 +12,8 @@ export default () => {
   let isLogo = {}
   if (locCategory[1] === 'category') {
     isLogo = {
-      opacity: '0'
+      opacity: '0',
+      'pointer-events': 'none'
     }
   } else {
     isLogo = {
