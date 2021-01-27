@@ -5,6 +5,7 @@ import Img from 'gatsby-image'
 import Layouts from '../components/layouts'
 import Keyvisual from '../components/category/keyvisual'
 import CategoryEyecatch from '../components/category/category-eyecatch'
+import CategoryModal from '../components/category/category-modal'
 // style
 import Category from '../styles/category.module.scss'
 
@@ -12,7 +13,6 @@ export default ({ data }) => {
   const [num, changeModalNumber] = useState(null)
   const toggleModal = (num: number) => {
     changeModalNumber(num)
-    console.log(num)
   }
 
   return (
@@ -33,16 +33,12 @@ export default ({ data }) => {
                 />
 
                 {num === index && (
-                  <div
-                    className={Category.modal}
-                    onClick={() => toggleModal(null)}
-                  >
-                    <div>
-                      <Img fluid={node.img.fluid} />
-                      <p>{node.title}</p>
-                      <p>{node.description.description}</p>
-                    </div>
-                  </div>
+                  <CategoryModal
+                    img={node.img.fluid}
+                    title={node.title}
+                    description={node.description.description}
+                    toggleModal={toggleModal}
+                  />
                 )}
               </div>
             ))}
