@@ -13,7 +13,7 @@ export default () => {
   if (locCategory[1] === 'category') {
     isLogo = {
       opacity: '0',
-      'pointer-events': 'none'
+      pointerEvents: 'none'
     }
   } else {
     isLogo = {
