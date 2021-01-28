@@ -19,32 +19,37 @@ export default ({ data }) => {
         pageImgHeight={null}
         pageImgWidth={null}
       />
-      <div className={Top.top}>
-        <h1 className={Top.top__title}>C-photo</h1>
-        <p className={Top.back}>
-          <Img
-            fluid={data.flowers.childImageSharp.fluid}
-            alt=""
-            style={{ height: '100%' }}
-          />
-        </p>
-      </div>
-
-      <div className={Top.categories}>
-        {data.eyecatch.edges.map(({ node }) => (
-          <Eyecatch eyecatchImg={node.img.fluid} category={node.category} />
+      <React.Fragment>
+        {data.top.edges.map(({ node }) => (
+          <div className={Top.top}>
+            <h1 className={Top.top__title}>{node.title}</h1>
+            <p className={Top.back}>
+              <Img fluid={node.keyvisual.fluid} alt="" />
+            </p>
+          </div>
         ))}
-      </div>
+
+        <div className={Top.categories}>
+          {data.eyecatch.edges.map(({ node }) => (
+            <Eyecatch eyecatchImg={node.img.fluid} category={node.category} />
+          ))}
+        </div>
+      </React.Fragment>
     </Layouts>
   )
 }
 
 export const query = graphql`
   query {
-    flowers: file(relativePath: { eq: "flowers.jpg" }) {
-      childImageSharp {
-        fluid(maxWidth: 1980) {
-          ...GatsbyImageSharpFluid_withWebp
+    top: allContentfulTop {
+      edges {
+        node {
+          title
+          keyvisual {
+            fluid(maxWidth: 1920) {
+              ...GatsbyContentfulFluid_withWebp
+            }
+          }
         }
       }
     }
