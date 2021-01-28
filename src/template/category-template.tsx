@@ -11,9 +11,12 @@ import Category from '../styles/category.module.scss'
 
 export default ({ data }) => {
   const [num, changeModalNumber] = useState(null)
+
   const toggleModal = (num: number) => {
+    console.log(num)
     changeModalNumber(num)
   }
+  const categoryLength = data.photo.edges.length
 
   return (
     <Layouts>
@@ -31,12 +34,13 @@ export default ({ data }) => {
                   index={index}
                   toggleModal={toggleModal}
                 />
-
                 {num === index && (
                   <CategoryModal
                     img={node.img.fluid}
                     title={node.title}
                     description={node.description.description}
+                    index={index}
+                    categoryLength={categoryLength}
                     toggleModal={toggleModal}
                   />
                 )}
