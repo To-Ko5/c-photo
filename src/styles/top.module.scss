@@ -1,3 +1,5 @@
+@import 'style';
+
 .top {
   position: relative;
   height: 100vh;
@@ -13,25 +15,30 @@
 }
 
 .back {
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   bottom: 0;
   right: 0;
   .back img {
+    display: block;
     object-fit: contain !important;
   }
 }
 
 .categories {
+  background: #212121;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  @include medium {
+    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+  }
 }
 
 .eyecatch {
   position: relative;
+  overflow: hidden;
   &__category {
-    font-size: 10vw;
+    font-size: unquote('max(100px, 8vw)');
     position: absolute;
     top: 50%;
     left: 50%;
