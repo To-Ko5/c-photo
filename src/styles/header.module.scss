@@ -1,18 +1,17 @@
+@import 'style';
+
 .header {
   padding: 8px;
   position: fixed;
   z-index: 555;
   width: 100%;
+  @include small {
+    padding: 24px;
+  }
   &__flex {
     display: flex;
     align-items: center;
     justify-content: space-between;
-  }
-}
-
-@media screen and (min-width: 576px) {
-  .header {
-    padding: 24px;
   }
 }
 
@@ -28,6 +27,10 @@
   width: 40px;
   position: relative;
   z-index: 1000;
+  @include small {
+    height: 50px;
+    width: 50px;
+  }
   &__link {
     cursor: pointer;
     height: 100%;
@@ -50,13 +53,6 @@
     bottom: 0;
     right: 0;
     width: 50%;
-  }
-}
-
-@media screen and (min-width: 576px) {
-  .nav_button {
-    height: 50px;
-    width: 50px;
   }
 }
 
