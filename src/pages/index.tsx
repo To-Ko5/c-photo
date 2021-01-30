@@ -54,7 +54,7 @@ export const query = graphql`
       }
     }
     eyecatch: allContentfulPhotoCategory(
-      sort: { fields: category, order: DESC }
+      sort: { fields: updatedAt, order: DESC }
     ) {
       edges {
         node {
