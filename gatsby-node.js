@@ -12,6 +12,12 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
             categorySlug
             id
           }
+          previous {
+            categorySlug
+          }
+          next {
+            categorySlug
+          }
         }
       }
     }
@@ -24,14 +30,18 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   }
 
   const productTemplate = path.resolve(`src/template/category-template.tsx`)
-  photoPostResult.data.allContentfulPhotoCategory.edges.forEach(({ node }) => {
-    createPage({
-      path: `/category/${node.categorySlug}/`,
-      component: productTemplate,
-      context: {
-        // This time the entire product is passed down as context
-        category: node.categorySlug
-      }
-    })
-  })
+  photoPostResult.data.allContentfulPhotoCategory.edges.forEach(
+    ({ node, previous, next }) => {
+      createPage({
+        path: `/category/${node.categorySlug}/`,
+        component: productTemplate,
+        context: {
+          // This time the entire product is passed down as context
+          category: node.categorySlug,
+          previous,
+          next
+        }
+      })
+    }
+  )
 }

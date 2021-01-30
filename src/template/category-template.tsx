@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { graphql } from 'gatsby'
+import { graphql, Link } from 'gatsby'
 import Img from 'gatsby-image'
 // components
 import Layouts from '../components/layouts'
@@ -9,7 +9,7 @@ import CategoryModal from '../components/category/category-modal'
 // style
 import Category from '../styles/category.module.scss'
 
-export default ({ data }) => {
+export default ({ data, pageContext }) => {
   const [num, changeModalNumber] = useState(null)
 
   const toggleModal = (num: number) => {
@@ -25,27 +25,45 @@ export default ({ data }) => {
           <Keyvisual category={node.category} img={node.img.fluid} />
         ))}
         <div className="container">
-          <div className={Category.category__list}>
-            {data.photo.edges.map(({ node }, index) => (
-              <div>
-                <CategoryEyecatch
-                  title={node.title}
-                  img={node.img.fluid}
-                  index={index}
-                  toggleModal={toggleModal}
-                />
-                {num === index && (
-                  <CategoryModal
-                    img={node.img.fluid}
+          <div className={Category.category__area}>
+            {pageContext.previous && (
+              <div className={Category.pagination}>
+                <Link to={`/category/${pageContext.previous.categorySlug}/`}>
+                  {pageContext.previous.categorySlug}
+                </Link>
+              </div>
+            )}
+
+            <div className={Category.category__list}>
+              {data.photo.edges.map(({ node }, index) => (
+                <div>
+                  <CategoryEyecatch
                     title={node.title}
-                    description={node.description.description}
+                    img={node.img.fluid}
                     index={index}
-                    categoryLength={categoryLength}
                     toggleModal={toggleModal}
                   />
-                )}
+                  {num === index && (
+                    <CategoryModal
+                      img={node.img.fluid}
+                      title={node.title}
+                      description={node.description.description}
+                      index={index}
+                      categoryLength={categoryLength}
+                      toggleModal={toggleModal}
+                    />
+                  )}
+                </div>
+              ))}
+            </div>
+
+            {pageContext.next && (
+              <div className={Category.pagination}>
+                <Link to={`/category/${pageContext.next.categorySlug}/`}>
+                  {pageContext.next.categorySlug}
+                </Link>
               </div>
-            ))}
+            )}
           </div>
         </div>
       </div>
