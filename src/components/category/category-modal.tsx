@@ -1,7 +1,7 @@
 import React from 'react'
 import Img, { FluidObject } from 'gatsby-image'
 //style
-import Category from '../../styles/category.module.scss'
+import Modal from '../../styles/modal.module.scss'
 
 interface categoryModal {
   title: string
@@ -29,9 +29,9 @@ export default (props: categoryModal) => {
   }
 
   return (
-    <div className={Category.modal} onClick={() => props.toggleModal(null)}>
-      <div className={Category.modal__inner}>
-        <p className={Category.modal__img}>
+    <div className={Modal.modal} onClick={() => props.toggleModal(null)}>
+      <div className={Modal.modal__inner}>
+        <p className={Modal.modal__img}>
           <Img fluid={props.img} alt={props.title} />
         </p>
         <p>{props.title}</p>
@@ -39,9 +39,9 @@ export default (props: categoryModal) => {
       </div>
 
       {isNext && (
-        <div className={`${Category.switching} ${Category.switching__next}`}>
+        <div className={`${Modal.switching} ${Modal.switching__next}`}>
           <a
-            className={Category.switching__link}
+            className={Modal.switching__link}
             onClick={(e) => clickSwitching(e, props.index + 1)}
           >
             Next
@@ -49,9 +49,9 @@ export default (props: categoryModal) => {
         </div>
       )}
       {isPrev && (
-        <div className={`${Category.switching} ${Category.switching__prev}`}>
+        <div className={`${Modal.switching} ${Modal.switching__prev}`}>
           <a
-            className={Category.switching__link}
+            className={Modal.switching__link}
             onClick={(e) => clickSwitching(e, props.index - 1)}
           >
             Prev

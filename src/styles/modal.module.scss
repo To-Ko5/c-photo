@@ -1,0 +1,67 @@
+@import 'style';
+
+.modal {
+  background-color: rgba(0, 0, 0, 0.9);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 100%;
+  width: 100%;
+  transition: 0.5s;
+  z-index: 999;
+  &__inner {
+    display: grid;
+    gap: 16px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    @media (min-width: 768px) {
+      & p {
+        z-index: 9999;
+        text-align: center;
+      }
+    }
+  }
+  &__img {
+    max-height: 60vh;
+    @media (min-width: 768px) {
+      & img {
+        object-fit: contain !important;
+      }
+    }
+  }
+}
+
+.switching {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 5000;
+  @include exlarge {
+    top: 50%;
+    left: auto;
+    transform: translateX(0);
+  }
+  &__link {
+    display: block;
+    text-align: center;
+    font-size: 20px;
+  }
+  &__next {
+    bottom: 10%;
+    @include exlarge {
+      right: 50px;
+    }
+  }
+  &__prev {
+    top: 10%;
+    @include exlarge {
+      top: 50%;
+      left: 50px;
+    }
+  }
+}
