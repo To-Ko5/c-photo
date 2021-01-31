@@ -3,7 +3,7 @@ import { graphql, Link } from 'gatsby'
 import Img from 'gatsby-image'
 // components
 import Layouts from '../components/layouts'
-import Keyvisual from '../components/category/keyvisual'
+import Keyvisual from '../components/category/category-keyvisual'
 import CategoryEyecatch from '../components/category/category-eyecatch'
 import CategoryModal from '../components/category/category-modal'
 // style
