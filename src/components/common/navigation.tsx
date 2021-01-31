@@ -39,8 +39,24 @@ export default (props: navigation) => {
                 About
               </Link>
             </li>
-            <li className={Navigation.gnav__list}>C-Portfolio</li>
-            <li className={Navigation.gnav__list}>Contact</li>
+            <li className={Navigation.gnav__list}>
+              <a
+                href={`${process.env.GATSBY_PORTFOLIO_URL}/menu`}
+                target="_blank"
+                rel="noopener"
+              >
+                C-Portfolio
+              </a>
+            </li>
+            <li className={Navigation.gnav__list}>
+              <a
+                href={`${process.env.GATSBY_PORTFOLIO_URL}/contact`}
+                target="_blank"
+                rel="noopener"
+              >
+                Contact
+              </a>
+            </li>
           </ul>
         </nav>
       </div>
