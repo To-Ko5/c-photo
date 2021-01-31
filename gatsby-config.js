@@ -46,8 +46,8 @@ module.exports = {
     {
       resolve: `gatsby-source-contentful`,
       options: {
-        spaceId: process.env.GATSBY_CONTENTFUL_SPACE_ID,
-        accessToken: process.env.GATSBY_CONTENTFUL_API_KEY
+        spaceId: process.env.CONTENTFUL_SPACE_ID,
+        accessToken: process.env.CONTENTFUL_API_KEY
       }
     },
     {
@@ -56,10 +56,10 @@ module.exports = {
         fonts: [
           {
             family: `Cormorant`,
-            variants: [`400`, `600`,`700`]
-          },
-        ],
-      },
-    } 
+            variants: [`400`, `600`, `700`]
+          }
+        ]
+      }
+    }
   ]
 }
