@@ -16,7 +16,8 @@
 }
 
 .logo {
-  font-size: 50px;
+  font-size: clamp(30px, 5vw, 50px);
+  font-style: italic;
   &__link {
     display: block;
   }

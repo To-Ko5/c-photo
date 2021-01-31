@@ -1,28 +1,22 @@
 @import 'style';
 
-.top {
+.keyvisual {
   position: relative;
   height: 100vh;
   width: 100%;
   &__title {
-    color: #fafafa;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 10;
   }
-}
-
-.back {
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  .back img {
-    display: block;
-    object-fit: contain !important;
+  &__img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
   }
 }
 
