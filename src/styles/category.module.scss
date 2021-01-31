@@ -3,20 +3,20 @@
 .category {
   &__area {
     padding-top: unquote('min(280px, 20vw)');
+    padding-bottom: 32px;
     position: relative;
+    @include exlarge {
+      padding-top: unquote('min(304px, 21vw)');
+    }
   }
   &__list {
     column-count: 1;
     column-gap: 0;
-  }
-  @media (min-width: 576px) {
-    &__list {
+    margin-bottom: 32px;
+    @include small {
       column-count: 2;
     }
-  }
-
-  @media (min-width: 992px) {
-    &__list {
+    @include large {
       column-count: 3;
     }
   }
@@ -50,6 +50,29 @@
 }
 
 .pagination {
+  text-align: center;
+  display: flex;
+  justify-content: space-between;
+  &__previous {
+    & a {
+      &::before {
+        content: '<';
+        margin-right: 8px;
+      }
+    }
+  }
+  &__next {
+    & a {
+      &::after {
+        content: '>';
+        margin-left: 8px;
+      }
+    }
+  }
+  &__link {
+    padding: 8px 0 0;
+    font-size: clamp(16px, 3vw, 32px);
+  }
 }
 
 .eyecatch {

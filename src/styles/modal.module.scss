@@ -19,7 +19,8 @@
     left: 50%;
     transform: translate(-50%, -50%);
     width: 90%;
-    @media (min-width: 768px) {
+    @include medium {
+      gap: 24px;
       & p {
         z-index: 9999;
         text-align: center;
@@ -28,7 +29,7 @@
   }
   &__img {
     max-height: 60vh;
-    @media (min-width: 768px) {
+    @include medium {
       & img {
         object-fit: contain !important;
       }

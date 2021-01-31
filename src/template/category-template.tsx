@@ -25,14 +25,6 @@ export default ({ data, pageContext }) => {
         ))}
         <div className="container">
           <div className={Category.category__area}>
-            {pageContext.previous && (
-              <div className={Category.pagination}>
-                <Link to={`/category/${pageContext.previous.categorySlug}/`}>
-                  {pageContext.previous.categorySlug}
-                </Link>
-              </div>
-            )}
-
             <div className={Category.category__list}>
               {data.photo.edges.map(({ node }, index) => (
                 <div>
@@ -56,13 +48,29 @@ export default ({ data, pageContext }) => {
               ))}
             </div>
 
-            {pageContext.next && (
-              <div className={Category.pagination}>
-                <Link to={`/category/${pageContext.next.categorySlug}/`}>
-                  {pageContext.next.categorySlug}
-                </Link>
-              </div>
-            )}
+            <div className={Category.pagination}>
+              {pageContext.previous && (
+                <div className={Category.pagination__previous}>
+                  <Link
+                    to={`/category/${pageContext.previous.categorySlug}/`}
+                    className={Category.pagination__link}
+                  >
+                    {pageContext.previous.categorySlug}
+                  </Link>
+                </div>
+              )}
+
+              {pageContext.next && (
+                <div className={Category.pagination__next}>
+                  <Link
+                    to={`/category/${pageContext.next.categorySlug}/`}
+                    className={Category.pagination__link}
+                  >
+                    {pageContext.next.categorySlug}
+                  </Link>
+                </div>
+              )}
+            </div>
           </div>
         </div>
       </div>
