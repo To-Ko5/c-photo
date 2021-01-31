@@ -1,6 +1,6 @@
 import React from 'react'
 import Img, { FluidObject } from 'gatsby-image'
-//style
+// style
 import Category from '../../styles/category.module.scss'
 
 interface categoryEyecatch {

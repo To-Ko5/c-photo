@@ -1,6 +1,6 @@
 import React from 'react'
 import Img, { FluidObject } from 'gatsby-image'
-//style
+// style
 import Modal from '../../styles/modal.module.scss'
 
 interface categoryModal {

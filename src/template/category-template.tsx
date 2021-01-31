@@ -8,6 +8,7 @@ import CategoryEyecatch from '../components/category/category-eyecatch'
 import CategoryModal from '../components/category/category-modal'
 // style
 import Category from '../styles/category.module.scss'
+// services
 
 export default ({ data, pageContext }) => {
   const [num, changeModalNumber] = useState(null)

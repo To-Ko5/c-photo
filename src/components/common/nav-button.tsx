@@ -1,5 +1,5 @@
 import React from 'react'
-
+// style
 import Header from '../../styles/header.module.scss'
 
 interface navigation {

@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
 import { Link } from 'gatsby'
-
+// components
 import NavButton from './nav-button'
 import Navigation from './navigation'
-
+// style
 import Header from '../../styles/header.module.scss'
 
 export default () => {

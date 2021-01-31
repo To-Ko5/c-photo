@@ -1,11 +1,11 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 import Img from 'gatsby-image'
-//components
+// components
 import Layouts from '../components/layouts'
 import Head from '../components/head'
 import Profile from "../components/about/profile"
-//style
+// style
 import About from '../styles/about.module.scss'
 
 export default ({ data, location }) => {

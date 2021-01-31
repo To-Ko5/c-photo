@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'gatsby'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTwitter, faInstagram } from '@fortawesome/free-brands-svg-icons'
-
+// style
 import Header from '../../styles/header.module.scss'
 
 interface navigation {

@@ -1,5 +1,5 @@
 import React from 'react'
-
+// components
 import Layouts from '../components/layouts'
 import Head from '../components/head'
 
