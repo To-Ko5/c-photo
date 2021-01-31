@@ -4,6 +4,7 @@ import Img from 'gatsby-image'
 // components
 import Layouts from '../components/layouts'
 import Head from '../components/head'
+import TopKeyvisual from '../components/top/top-keyvisual'
 import Eyecatch from '../components/top/eyecatch'
 // style
 import Top from '../styles/top.module.scss'
@@ -21,12 +22,7 @@ export default ({ data }) => {
       />
       <React.Fragment>
         {data.top.edges.map(({ node }) => (
-          <div className={Top.top}>
-            <h1 className={Top.top__title}>{node.title}</h1>
-            <p className={Top.back}>
-              <Img fluid={node.keyvisual.fluid} alt="" />
-            </p>
-          </div>
+          <TopKeyvisual title={node.title} keyvisual={node.keyvisual.fluid} />
         ))}
 
         <div className={Top.categories}>
