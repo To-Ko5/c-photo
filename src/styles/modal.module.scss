@@ -12,6 +12,7 @@
   transition: 0.5s;
   z-index: 999;
   &__inner {
+    font-style: italic;
     display: grid;
     gap: 16px;
     position: absolute;
