@@ -16,7 +16,7 @@ export default (props: profile) => {
         <p className={About.profile__img}>
           <Img fluid={props.img} alt={props.name} />
         </p>
-        <h1 className={About.profile__name}>{props.name}</h1>
+        <h2 className={About.profile__name}>{props.name}</h2>
         <p className={About.profile__description}> {props.description}</p>
       </div>
     </div>

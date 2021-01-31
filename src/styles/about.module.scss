@@ -1,5 +1,19 @@
+@import 'style';
+
 .about {
-  padding-top: 100px;
+  min-height: 100vh;
+  padding-top: calc(56px + 24px);
+  @include small {
+    padding-top: calc(98px + 24px);
+  }
+  &__title {
+    font-size: clamp(30px, 5vw, 50px);
+    text-align: center;
+    margin-bottom: 24px;
+    @include small {
+      margin-bottom: 32px;
+    }
+  }
 }
 
 .profile {
@@ -7,7 +21,13 @@
   margin: 0 auto;
   &__inner {
     display: grid;
-    gap: 32px;
+    gap: 24px;
+    @include small {
+      margin-bottom: 32px;
+    }
+  }
+  &__name {
+    font-size: clamp(24px, 5vw, 40px);
   }
   &__description {
     line-height: 1.5;
