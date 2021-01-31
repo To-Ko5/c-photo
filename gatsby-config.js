@@ -49,17 +49,6 @@ module.exports = {
         spaceId: process.env.CONTENTFUL_SPACE_ID,
         accessToken: process.env.CONTENTFUL_API_KEY
       }
-    },
-    {
-      resolve: `gatsby-plugin-prefetch-google-fonts`,
-      options: {
-        fonts: [
-          {
-            family: `Cormorant`,
-            variants: [`400`, `600`, `700`]
-          }
-        ]
-      }
     }
   ]
 }
