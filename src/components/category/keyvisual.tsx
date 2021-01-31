@@ -2,6 +2,8 @@ import React from 'react'
 import Img, { FluidObject } from 'gatsby-image'
 //style
 import Category from '../../styles/category.module.scss'
+// services
+import { firstUpperCase } from '../../services/first-uppercase'
 
 interface categoryKeyvisual {
   category: string
@@ -9,10 +11,6 @@ interface categoryKeyvisual {
 }
 
 export default (props: categoryKeyvisual) => {
-  const firstUpperCase = (title: string) => {
-    const upperCaseTitle = title.charAt(0).toUpperCase() + title.slice(1)
-    return upperCaseTitle
-  }
   return (
     <div className={Category.keyvisual}>
       <h1 className={Category.keyvisual__title}>
