@@ -9,6 +9,7 @@ import CategoryModal from '../components/category/category-modal'
 // style
 import Category from '../styles/category.module.scss'
 // services
+import { firstUpperCase } from '../services/first-uppercase'
 
 export default ({ data, pageContext }) => {
   const [num, changeModalNumber] = useState(null)
@@ -50,27 +51,45 @@ export default ({ data, pageContext }) => {
             </div>
 
             <div className={Category.pagination}>
-              {pageContext.previous && (
-                <div className={Category.pagination__previous}>
-                  <Link
-                    to={`/category/${pageContext.previous.categorySlug}/`}
-                    className={Category.pagination__link}
-                  >
-                    {pageContext.previous.categorySlug}
-                  </Link>
-                </div>
-              )}
+              {(() => {
+                if (pageContext.previous) {
+                  return (
+                    <div className={Category.pagination__previous}>
+                      <Link
+                        to={`/category/${pageContext.previous.categorySlug}/`}
+                        className={Category.pagination__link}
+                      >
+                        {firstUpperCase(pageContext.previous.categorySlug)}
+                      </Link>
+                    </div>
+                  )
+                } else {
+                  return <div></div>
+                }
+              })()}
 
-              {pageContext.next && (
-                <div className={Category.pagination__next}>
-                  <Link
-                    to={`/category/${pageContext.next.categorySlug}/`}
-                    className={Category.pagination__link}
-                  >
-                    {pageContext.next.categorySlug}
-                  </Link>
-                </div>
-              )}
+              {(() => {
+                if (pageContext.next) {
+                  return (
+                    <div className={Category.pagination__next}>
+                      <Link
+                        to={`/category/${pageContext.next.categorySlug}/`}
+                        className={Category.pagination__link}
+                      >
+                        {firstUpperCase(pageContext.next.categorySlug)}
+                      </Link>
+                    </div>
+                  )
+                } else {
+                  return (
+                    <div className={Category.pagination__top}>
+                      <Link to={'/'} className={Category.pagination__link}>
+                        Top
+                      </Link>
+                    </div>
+                  )
+                }
+              })()}
             </div>
           </div>
         </div>
