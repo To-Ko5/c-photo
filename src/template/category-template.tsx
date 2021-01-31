@@ -13,7 +13,6 @@ export default ({ data, pageContext }) => {
   const [num, changeModalNumber] = useState(null)
 
   const toggleModal = (num: number) => {
-    console.log(num)
     changeModalNumber(num)
   }
   const categoryLength = data.photo.edges.length

@@ -11,7 +11,6 @@ interface categoryKeyvisual {
 export default (props: categoryKeyvisual) => {
   const firstUpperCase = (title: string) => {
     const upperCaseTitle = title.charAt(0).toUpperCase() + title.slice(1)
-    console.log()
     return upperCaseTitle
   }
   return (
