@@ -38,7 +38,7 @@
   position: relative;
   overflow: hidden;
   &__category {
-    font-size: unquote('max(100px, 8vw)');
+    font-size: clamp(50px, 8vw, 100px);
     position: absolute;
     top: 50%;
     left: 50%;
