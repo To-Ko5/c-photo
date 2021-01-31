@@ -1,7 +1,5 @@
 import React from 'react'
 import { Link } from 'gatsby'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faTwitter, faInstagram } from '@fortawesome/free-brands-svg-icons'
 // style
 import Navigation from '../../styles/navigation.module.scss'
 
@@ -43,14 +41,6 @@ export default (props: navigation) => {
             </li>
             <li className={Navigation.gnav__list}>C-Portfolio</li>
             <li className={Navigation.gnav__list}>Contact</li>
-            <li className={Navigation.gnav__list}>
-              <a>
-                <FontAwesomeIcon icon={faTwitter} />
-              </a>
-              <a>
-                <FontAwesomeIcon icon={faInstagram} />
-              </a>
-            </li>
           </ul>
         </nav>
       </div>
