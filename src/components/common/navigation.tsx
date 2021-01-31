@@ -3,7 +3,7 @@ import { Link } from 'gatsby'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTwitter, faInstagram } from '@fortawesome/free-brands-svg-icons'
 // style
-import Header from '../../styles/header.module.scss'
+import Navigation from '../../styles/navigation.module.scss'
 
 interface navigation {
   isNavigation: boolean
@@ -13,29 +13,37 @@ interface navigation {
 export default (props: navigation) => {
   return (
     <div
-      className={`${Header.navigation}
-    ${props.isNavigation ? Header.navigation__active : ''}
+      className={`${Navigation.navigation}
+    ${props.isNavigation ? Navigation.navigation__active : ''}
   `}
     >
       <div
-        className={Header.navigation__wrapper}
+        className={Navigation.navigation__wrapper}
         onClick={() => props.clickNavigation()}
       >
-        <nav className={Header.nav}>
-          <ul className={Header.gnav}>
-            <li className={Header.gnav__list}>
-              <Link to={'/'} className={Header.gnav__link}>
+        <nav className={Navigation.nav}>
+          <ul className={Navigation.gnav}>
+            <li className={Navigation.gnav__list}>
+              <Link
+                to={'/'}
+                className={Navigation.gnav__link}
+                activeClassName={Navigation.gnav__link__active}
+              >
                 Top
               </Link>
             </li>
-            <li className={Header.gnav__list}>
-              <Link to={'/about'} className={Header.gnav__link}>
+            <li className={Navigation.gnav__list}>
+              <Link
+                to={'/about'}
+                className={Navigation.gnav__link}
+                activeClassName={Navigation.gnav__link__active}
+              >
                 About
               </Link>
             </li>
-            <li className={Header.gnav__list}>C-Portfolio</li>
-            <li className={Header.gnav__list}>Contact</li>
-            <li className={Header.gnav__list}>
+            <li className={Navigation.gnav__list}>C-Portfolio</li>
+            <li className={Navigation.gnav__list}>Contact</li>
+            <li className={Navigation.gnav__list}>
               <a>
                 <FontAwesomeIcon icon={faTwitter} />
               </a>

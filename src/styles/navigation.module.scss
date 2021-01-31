@@ -37,5 +37,8 @@
   }
   &__link {
     display: block;
+    &__active {
+      opacity: 0.5;
+    }
   }
 }
