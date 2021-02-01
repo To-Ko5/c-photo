@@ -1,3 +1,4 @@
+@import 'style';
 .navigation {
   background-color: rgba(0, 0, 0, 0.9);
   position: fixed;
@@ -7,11 +8,11 @@
   bottom: 0;
   height: 100%;
   width: 100%;
-  opacity: 0;
+  display: none;
   transition: 0.3s;
   pointer-events: none;
   &__active {
-    opacity: 1;
+    display: block;
     pointer-events: auto;
   }
   &__wrapper {
@@ -34,6 +35,9 @@
     font-size: clamp(40px, 5vw, 200px);
     &:not(:last-of-type) {
       margin-bottom: 24px;
+      @include large {
+        margin-bottom: 40px;
+      }
     }
   }
   &__link {
