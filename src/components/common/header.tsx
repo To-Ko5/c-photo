@@ -9,16 +9,9 @@ import Header from '../../styles/header.module.scss'
 export default () => {
   const loc = window.location.pathname
   const locCategory = loc.split('/')
-  let isLogo = {}
+  let isLogo = true
   if (locCategory[1] === 'category') {
-    isLogo = {
-      opacity: '0',
-      pointerEvents: 'none'
-    }
-  } else {
-    isLogo = {
-      opacity: '1'
-    }
+    isLogo = false
   }
 
   const [isNavigation, toggleNavigation] = useState(false)
@@ -30,11 +23,19 @@ export default () => {
   return (
     <header className={Header.header}>
       <div className={Header.header__flex}>
-        <p className={Header.logo} style={isLogo}>
-          <Link to={'/'} className={Header.logo__link}>
-            C-photo
-          </Link>
-        </p>
+        {(() => {
+          if (isLogo) {
+            return (
+              <p className={Header.logo}>
+                <Link to={'/'} className={Header.logo__link}>
+                  C-photo
+                </Link>
+              </p>
+            )
+          } else {
+            return <div></div>
+          }
+        })()}
         <NavButton
           isNavigation={isNavigation}
           clickNavigation={clickNavigation}
