@@ -3,6 +3,7 @@ import { graphql, Link } from 'gatsby'
 import Img from 'gatsby-image'
 // components
 import Layouts from '../components/layouts'
+import Head from '../components/head'
 import Keyvisual from '../components/category/category-keyvisual'
 import CategoryEyecatch from '../components/category/category-eyecatch'
 import CategoryModal from '../components/category/category-modal'
@@ -11,7 +12,7 @@ import Category from '../styles/category.module.scss'
 // services
 import { firstUpperCase } from '../services/first-uppercase'
 
-export default ({ data, pageContext }) => {
+export default ({ data, location, pageContext }) => {
   const [num, changeModalNumber] = useState(null)
 
   const toggleModal = (num: number) => {
@@ -19,12 +20,25 @@ export default ({ data, pageContext }) => {
   }
   const categoryLength = data.photo.edges.length
 
+  const keyvisual = data.category.edges.map(({ node }) => {
+    return node
+  })
+
   return (
     <Layouts>
+      <Head
+        pageTitle={firstUpperCase(pageContext.category)}
+        pageDescription={firstUpperCase(pageContext.category) + ' ' + 'Gallery'}
+        pagePath={location.pathname}
+        pageImg={keyvisual[0].img.file.url}
+        pageImgWidth={keyvisual[0].img.file.details.image.width}
+        pageImgHeight={keyvisual[0].img.file.details.image.height}
+      />
       <div className={Category.category}>
-        {data.category.edges.map(({ node }) => (
-          <Keyvisual category={node.category} img={node.img.fluid} />
-        ))}
+        <Keyvisual
+          category={keyvisual[0].category}
+          img={keyvisual[0].img.fluid}
+        />
         <div className="container">
           <div className={Category.category__area}>
             <div className={Category.category__list}>
@@ -110,6 +124,15 @@ export const query = graphql`
           img {
             fluid(maxWidth: 1920) {
               ...GatsbyContentfulFluid_withWebp
+            }
+            file {
+              url
+              details {
+                image {
+                  height
+                  width
+                }
+              }
             }
           }
         }
