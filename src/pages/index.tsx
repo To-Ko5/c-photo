@@ -12,9 +12,6 @@ export default ({ data }) => {
   return (
     <Layouts>
       <Head
-        pageTitle={null}
-        pageDescription={null}
-        pagePath={null}
         pageImg={null}
         pageImgHeight={null}
         pageImgWidth={null}
