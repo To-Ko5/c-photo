@@ -3,12 +3,12 @@ import { Helmet } from 'react-helmet'
 import { useStaticQuery, graphql } from 'gatsby'
 
 interface metaData {
-  pageTitle: string | null
-  pageDescription: string | null
-  pagePath: string | null
-  pageImg: string | null
-  pageImgWidth: number | null
-  pageImgHeight: number | null
+  pageTitle?: string
+  pageDescription?: string
+  pagePath?: string
+  pageImg?: string
+  pageImgWidth?: number
+  pageImgHeight?: number
 }
 
 export default (props: metaData) => {
