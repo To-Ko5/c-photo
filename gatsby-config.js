@@ -13,7 +13,7 @@ module.exports = {
     title: `C-photo`,
     description: `C’s photos`,
     lang: `ja`,
-    siteUrl: `localhost:8000`,
+    siteUrl: process.env.ORIGIN_URL,
     locale: `ja_JP`
   },
   plugins: [
