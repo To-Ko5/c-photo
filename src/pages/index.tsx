@@ -11,22 +11,26 @@ import Top from '../styles/top.module.scss'
 export default ({ data }) => {
   return (
     <Layouts>
-      <Head
-        pageImg={null}
-        pageImgHeight={null}
-        pageImgWidth={null}
-      />
-      <React.Fragment>
+      <Head pageImg={null} pageImgHeight={null} pageImgWidth={null} />
+      <div className={Top.top}>
         {data.top.edges.map(({ node }) => (
-          <TopKeyvisual title={node.title} keyvisual={node.keyvisual.fluid} />
+          <TopKeyvisual
+            key={node.title}
+            title={node.title}
+            keyvisual={node.keyvisual.fluid}
+          />
         ))}
 
         <div className={Top.categories}>
           {data.eyecatch.edges.map(({ node }) => (
-            <Eyecatch eyecatchImg={node.img.fluid} category={node.category} />
+            <Eyecatch
+              key={node.category}
+              eyecatchImg={node.img.fluid}
+              category={node.category}
+            />
           ))}
         </div>
-      </React.Fragment>
+      </div>
     </Layouts>
   )
 }

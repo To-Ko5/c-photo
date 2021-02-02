@@ -43,7 +43,7 @@ export default ({ data, location, pageContext }) => {
           <div className={Category.category__area}>
             <div className={Category.category__list}>
               {data.photo.edges.map(({ node }, index) => (
-                <div>
+                <div key={index}>
                   <CategoryEyecatch
                     title={node.title}
                     img={node.img.fluid}
