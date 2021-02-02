@@ -13,9 +13,9 @@ export default (props: profile) => {
   return (
     <div className={About.profile}>
       <div className={About.profile__inner}>
-        <p className={About.profile__img}>
+        <div className={About.profile__img}>
           <Img fluid={props.img} alt={props.name} />
-        </p>
+        </div>
         <h2 className={About.profile__name}>{props.name}</h2>
         <p className={About.profile__description}> {props.description}</p>
       </div>

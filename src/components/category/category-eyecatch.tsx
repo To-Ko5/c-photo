@@ -16,9 +16,9 @@ export default (props: categoryEyecatch) => {
       className={Category.eyecatch}
       onClick={() => props.toggleModal(props.index)}
     >
-      <p className={Category.eyecatch__img}>
+      <div className={Category.eyecatch__img}>
         <Img fluid={props.img} alt={props.title} />
-      </p>
+      </div>
     </div>
   )
 }

@@ -25,13 +25,13 @@ export default (props: categoryKeyvisual) => {
       <h1 className={Category.keyvisual__title}>
         {firstUpperCase(props.category)}
       </h1>
-      <p
+      <div
         className={Category.keyvisual__img}
         style={blur ? no_filter : undefined}
         onClick={() => changeBlur()}
       >
         <Img fluid={props.img} alt={props.category} />
-      </p>
+      </div>
     </div>
   )
 }

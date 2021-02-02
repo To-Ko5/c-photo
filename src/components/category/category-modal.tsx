@@ -31,9 +31,9 @@ export default (props: categoryModal) => {
   return (
     <div className={Modal.modal} onClick={() => props.toggleModal(null)}>
       <div className={Modal.modal__inner}>
-        <p className={Modal.modal__img}>
+        <div className={Modal.modal__img}>
           <Img fluid={props.img} alt={props.title} />
-        </p>
+        </div>
         <p>{props.title}</p>
         <p>{props.description}</p>
       </div>
