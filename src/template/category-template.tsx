@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import { graphql, Link } from 'gatsby'
-import Img from 'gatsby-image'
 // components
 import Layouts from '../components/layouts'
 import Head from '../components/head'
