@@ -1,4 +1,5 @@
 @import 'style';
+
 .navigation {
   background-color: rgba(0, 0, 0, 0.9);
   position: fixed;
@@ -9,15 +10,22 @@
   height: 100%;
   width: 100%;
   display: none;
-  transition: 0.3s;
-  pointer-events: none;
   &__active {
     display: block;
-    pointer-events: auto;
+    animation: show 0.3s;
   }
   &__wrapper {
     height: 100%;
     width: 100%;
+  }
+}
+
+@keyframes show {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
   }
 }
 
