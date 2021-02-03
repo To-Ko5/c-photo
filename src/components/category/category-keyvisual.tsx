@@ -8,6 +8,7 @@ import { firstUpperCase } from '../../services/first-uppercase'
 interface categoryKeyvisual {
   category: string
   img: FluidObject
+  isBlur: boolean
 }
 
 export default (props: categoryKeyvisual) => {
@@ -15,11 +16,6 @@ export default (props: categoryKeyvisual) => {
     filter: 'none'
   }
 
-  const [blur, blurToggle] = useState(false)
-
-  const changeBlur = () => {
-    blurToggle(!blur)
-  }
   return (
     <div className={Category.keyvisual}>
       <h1 className={Category.keyvisual__title}>
@@ -27,8 +23,7 @@ export default (props: categoryKeyvisual) => {
       </h1>
       <div
         className={Category.keyvisual__img}
-        style={blur ? no_filter : undefined}
-        onClick={() => changeBlur()}
+        style={props.isBlur ? no_filter : undefined}
       >
         <Img fluid={props.img} alt={props.category} />
       </div>

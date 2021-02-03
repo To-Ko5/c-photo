@@ -70,8 +70,9 @@
     }
   }
   &__link {
-    padding: 8px 0 0;
+    cursor: pointer;
     font-size: clamp(16px, 3vw, 32px);
+    padding: 8px 0 0;
   }
 }
 

@@ -1,5 +1,7 @@
 import React, { useState } from 'react'
 import { graphql, Link } from 'gatsby'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faExpand } from '@fortawesome/free-solid-svg-icons'
 // components
 import Layouts from '../components/layouts'
 import Head from '../components/head'
@@ -13,9 +15,14 @@ import { firstUpperCase } from '../services/first-uppercase'
 
 export default ({ data, location, pageContext }) => {
   const [num, changeModalNumber] = useState(null)
+  const [isBlur, bgBlurToggle] = useState(false)
 
   const toggleModal = (num: number) => {
     changeModalNumber(num)
+  }
+
+  const changeBlur = () => {
+    bgBlurToggle(!isBlur)
   }
   const categoryLength = data.photo.edges.length
 
@@ -37,10 +44,18 @@ export default ({ data, location, pageContext }) => {
         <Keyvisual
           category={keyvisual[0].category}
           img={keyvisual[0].img.fluid}
+          isBlur={isBlur}
         />
         <div className="container">
           <div className={Category.category__area}>
-            <div className={Category.category__list}>
+            <div
+              className={Category.category__list}
+              style={
+                isBlur
+                  ? { opacity: '0', transition: '0.3s' }
+                  : { opacity: '1', transition: '0.3s' }
+              }
+            >
               {data.photo.edges.map(({ node }, index) => (
                 <div key={index}>
                   <CategoryEyecatch
@@ -80,7 +95,14 @@ export default ({ data, location, pageContext }) => {
                   return <div></div>
                 }
               })()}
-
+              <div>
+                <a
+                  onClick={() => changeBlur()}
+                  className={Category.pagination__link}
+                >
+                  <FontAwesomeIcon icon={faExpand} />
+                </a>
+              </div>
               {(() => {
                 if (pageContext.next) {
                   return (
@@ -95,7 +117,7 @@ export default ({ data, location, pageContext }) => {
                   )
                 } else {
                   return (
-                    <div className={Category.pagination__top}>
+                    <div className={Category.pagination__next}>
                       <Link to={'/'} className={Category.pagination__link}>
                         Top
                       </Link>
