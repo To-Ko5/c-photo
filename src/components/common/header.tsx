@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Link } from 'gatsby'
 // components
 import NavButton from './nav-button'
@@ -7,12 +7,16 @@ import Navigation from './navigation'
 import Header from '../../styles/header.module.scss'
 
 export default () => {
-  const loc = window.location.pathname
-  const locCategory = loc.split('/')
-  let isLogo = true
-  if (locCategory[1] === 'category') {
-    isLogo = false
-  }
+  const [isLogo, setLocationName] = useState(true)
+  useEffect(() => {
+    const loc = window.location.pathname
+    const locCategory = loc.split('/')
+    if (locCategory[1] === 'category') {
+      setLocationName(false)
+    } else {
+      setLocationName(true)
+    }
+  }, [])
 
   const [isNavigation, toggleNavigation] = useState(false)
 
