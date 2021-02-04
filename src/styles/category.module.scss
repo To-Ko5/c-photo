@@ -2,12 +2,8 @@
 
 .category {
   &__area {
-    padding-top: unquote('min(280px, 20vw)');
     padding-bottom: 32px;
     position: relative;
-    @include exlarge {
-      padding-top: unquote('min(304px, 21vw)');
-    }
   }
   &__list {
     column-count: 1;
@@ -25,11 +21,17 @@
 .keyvisual {
   &__title {
     font-size: unquote('min(400px, 14vw)');
-    line-height: 0.8;
-    position: fixed;
+    line-height: 1;
+    vertical-align: middle;
+    margin-bottom: 48px;
+    position: relative;
     top: 8px;
     left: 8px;
-    z-index: 500;
+    z-index: 5;
+    width: 50%;
+    @include large {
+      margin-bottom: 64px;
+    }
   }
   &__img {
     min-height: 100vh;
