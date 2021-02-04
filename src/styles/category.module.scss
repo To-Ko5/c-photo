@@ -45,12 +45,6 @@
   }
 }
 
-@supports (-webkit-touch-callout: none) {
-  .keyvisual {
-    height: -webkit-fill-available;
-  }
-}
-
 .pagination {
   text-align: center;
   display: flex;
