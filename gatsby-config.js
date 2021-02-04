@@ -36,9 +36,9 @@ module.exports = {
         short_name: `C-photo`,
         start_url: `/`,
         lang: `ja`,
-        icon: `static/icon.png`,
-        background_color: `#212121`,
-        theme_color: `#fafafa`,
+        icon: `static/icon.jpg`,
+        background_color: `#000000`,
+        theme_color: `#212121`,
         display: `standalone`
       }
     },
