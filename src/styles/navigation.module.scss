@@ -9,23 +9,16 @@
   bottom: 0;
   height: 100%;
   width: 100%;
-  display: none;
+  visibility: hidden;
+  opacity: 0;
+  transition: 0.3s;
   &__active {
-    display: block;
-    animation: show 0.3s;
+    visibility: visible;
+    opacity: 1;
   }
   &__wrapper {
     height: 100%;
     width: 100%;
-  }
-}
-
-@keyframes show {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
   }
 }
 
