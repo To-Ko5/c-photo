@@ -1,0 +1,29 @@
+@import 'style';
+
+.error {
+  background-color: rgba(0, 0, 0, 0.6);
+  min-height: calc(100vh - 32px);
+  position: relative;
+  &__inner {
+    text-align: center;
+    padding: 0 8px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+  }
+  &__title {
+    font-size: clamp(16px, 3vw, 32px);
+    margin-bottom: 24px;
+    @include large {
+      margin-bottom: 64px;
+    }
+  }
+}
+
+@supports (-webkit-touch-callout: none) {
+  .error {
+    height: -webkit-fill-available;
+  }
+}
