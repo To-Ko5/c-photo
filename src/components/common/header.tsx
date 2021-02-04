@@ -18,6 +18,12 @@ export default () => {
 
   const clickNavigation = () => {
     toggleNavigation(!isNavigation)
+    let body = document.body
+    if (!isNavigation) {
+      body.style.overflowY = 'hidden'
+    } else {
+      body.style.overflowY = 'auto'
+    }
   }
 
   return (
