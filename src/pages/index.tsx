@@ -9,18 +9,22 @@ import Eyecatch from '../components/top/eyecatch'
 import Top from '../styles/top.module.scss'
 
 export default ({ data }) => {
+  const keyVisual = data.top.edges.map(({ node }) => {
+    return node
+  })
   return (
     <Layouts>
-      <Head pageImg={null} pageImgHeight={null} pageImgWidth={null} />
+      <Head
+        pageImg={keyVisual[0].keyvisual.file.url}
+        pageImgHeight={keyVisual[0].keyvisual.file.details.image.height}
+        pageImgWidth={keyVisual[0].keyvisual.file.details.image.width}
+      />
       <div className={Top.top}>
-        {data.top.edges.map(({ node }) => (
-          <TopKeyvisual
-            key={node.title}
-            title={node.title}
-            keyvisual={node.keyvisual.fluid}
-          />
-        ))}
-
+        <TopKeyvisual
+          key={keyVisual[0].title}
+          title={keyVisual[0].title}
+          keyvisual={keyVisual[0].keyvisual.fluid}
+        />
         <div className={Top.categories}>
           {data.eyecatch.edges.map(({ node }) => (
             <Eyecatch
@@ -44,6 +48,15 @@ export const query = graphql`
           keyvisual {
             fluid(maxWidth: 1920) {
               ...GatsbyContentfulFluid_withWebp
+            }
+            file {
+              url
+              details {
+                image {
+                  height
+                  width
+                }
+              }
             }
           }
         }
