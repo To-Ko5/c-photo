@@ -1,9 +1,6 @@
-<p align="center">
-  ![C-photo](static/icon.jpg)
-</p>
-<h1 align="center">
-  C-photo
-</h1>
+# C-photo
+
+![C-photo](static/icon.jpg)
 Gatsby.js・Contentful で制作した写真のポートフォリオサイトです。
 過去に撮影した作品をまとめています。
 
