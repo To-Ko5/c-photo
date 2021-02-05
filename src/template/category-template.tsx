@@ -95,7 +95,7 @@ export default ({ data, location, pageContext }) => {
                   return <div></div>
                 }
               })()}
-              <div>
+              <div className={Category.pagination__expand}>
                 <a
                   onClick={() => changeBlur()}
                   className={Category.pagination__link}
