@@ -2,7 +2,7 @@
 
 .about {
   background-color: rgba(0, 0, 0, 0.6);
-  min-height: 100vh;
+  min-height: calc(100vh - 32px);
   padding-top: calc(56px + 24px);
   @include small {
     padding-top: calc(98px + 24px);
@@ -32,5 +32,6 @@
   }
   &__description {
     line-height: 1.5;
+    white-space: pre-wrap;
   }
 }
