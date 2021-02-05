@@ -1,5 +1,5 @@
 <p align="center">
-  ![C-photo](static/icon.png)
+  ![C-photo](static/icon.jpg)
 </p>
 <h1 align="center">
   C-photo
